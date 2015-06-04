@@ -85,14 +85,14 @@ public class Play extends BasicGameState {
         Random rand = new Random();
         int randomNum = rand.nextInt((max - min) + 1) + min;
         return randomNum;
-    }
+    	}
 	
 	public static String currentDate() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         Date date = new Date();
         String dateCreated = dateFormat.format(date);
         return dateCreated;
-    }
+    	}
 	
 	public static void writeCsvFile() {		
 		FileWriter fileWriter = null;				
