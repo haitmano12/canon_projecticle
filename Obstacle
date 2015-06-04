@@ -1,0 +1,47 @@
+package com.mpc.objects;
+	
+import org.newdawn.slick.*;   
+import org.newdawn.slick.geom.Circle;
+
+public class Obstacle {
+	
+	protected Image obstacle = null;
+	protected float x;
+	protected float y;
+	protected float vely;
+	protected float velx;
+	
+	public Obstacle(float x, float y) throws SlickException {
+		obstacle = new Image("./resources/images/rock.png");
+		this.x = x;
+		this.y = y;
+		
+	}
+	
+	public float getX() {
+		return x;
+	}
+	
+	public float getY() {
+		return y;
+	}
+	
+	public void changeX(double val) {
+		x += val;
+	}
+	
+	public void changeY(double val) {
+		y += val;
+	}
+	
+	public boolean intersects(Projectile projectile) {
+		Circle obs = new Circle(x, y, obstacle.getWidth()/2);
+		
+		if(obs.intersects(projectile.getCircle())){
+			return true;
+		}
+		
+		return false;
+	}	
+	
+}
